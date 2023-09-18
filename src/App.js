@@ -6,21 +6,9 @@ import Header from './components/Header';
 import store from './utils/store';
 import { Provider } from 'react-redux'
 import './index.css'
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { Outlet, RouterProvider, createBrowserRouter } from 'react-router-dom';
 import InfoCard from './components/InfoCard';
-
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Body/>,
-    // loader: rootLoader,
-  },
-  {
-    path: "/searched/:id",
-    element: <InfoCard/>,
-  }
-]);
+import About from './components/About';
 
 
 function App() {
@@ -28,7 +16,7 @@ function App() {
     <div className=''>
       <Provider store={store}>
         <Header/>
-        <RouterProvider router={router}/>
+        <Outlet/>
         <Footer/>
       </Provider>
     </div>

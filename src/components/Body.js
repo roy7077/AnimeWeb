@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import SEARCH_API from '../utils/const';
 import PlanetCard from './PlanetCard';
 import { Link } from 'react-router-dom';
+import InfoCardShimmer from '../shimmer/InfoCardShimmer';
 
 const Body = () => {
 
@@ -20,7 +21,11 @@ const Body = () => {
     getdata();
   },[planet]);
 
+  if(!data)
+  return <InfoCardShimmer/>;
+
   return (
+    
     <div className='p-2 m-2 flex flex-wrap items-center justify-center text-center '>
         {
             data &&

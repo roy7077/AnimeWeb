@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { setname } from '../utils/Slice';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
 
@@ -8,7 +9,7 @@ const Header = () => {
     const dispatch=useDispatch();
 
   return (
-    <div className=' shadow-lg flex justify-between bg-gray-800 text-white'>
+    <div className=' shadow-lg flex justify-between bg-gray-800 sticky top-0'>
       <div className=''>
         <img 
         alt="logo"
@@ -42,10 +43,11 @@ const Header = () => {
         />
       </div>
       <div className='p-2 m-2'>
-        <ul className='flex'>
-            <li className='ml-5 hover:text-red-500 cursor-pointer'>Home</li>
-            <li className='ml-5 hover:text-red-500 cursor-pointer'>Contact</li>
-            <li className='ml-5 hover:text-red-500 cursor-pointer'>About</li>
+        <ul className='flex text-white'>
+        <li><Link to="/" className='ml-5 hover:text-red-500 cursor-pointer'>Home</Link></li>
+        <li><Link to="/about" className='ml-5 hover:text-red-500 cursor-pointer'>About</Link></li>
+        <li><Link to="/contact" className='ml-5 hover:text-red-500 cursor-pointer' >Contact</Link></li>
+        <li><Link to="/favlist" className='ml-5 hover:text-red-500 cursor-pointer'>Favourite</Link></li>
         </ul>
       </div>
     </div>
