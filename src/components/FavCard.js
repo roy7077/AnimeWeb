@@ -15,6 +15,7 @@ const FavCard = ({id}) => {
     getdata();
   },[])
 
+  
   return (
     <div className=''>
       <FavRender info={data}/>

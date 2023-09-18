@@ -25,16 +25,15 @@ export const Slice = createSlice({
    removeitems:(state,action)=>{
 
       // state.items=[];
-      //  let cnt=0;
-      //  let s=action.payload.toString();
-      //  state.items.map((data)=>{
-      //      if(data===s)
-      //      {
-      //          state.items.splice(cnt, 1);
-      //          return ;
-      //      }
-      //      cnt++;
-      //  })
+       let cnt=0;
+       state.items.map((data)=>{
+           if(data==action.payload)
+           {
+               state.items.splice(cnt, 1);
+
+           }
+           cnt++;
+       })
    },
   
    clearitems:(state)=>{

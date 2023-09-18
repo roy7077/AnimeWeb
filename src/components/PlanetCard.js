@@ -30,7 +30,7 @@ export const FavRender=({info})=>{
       <div 
       onClick={()=>{
         // console.log(info?.mal_id);
-        dispatch(clearitems());
+        dispatch(removeitems(info?.mal_id));
       }}
       className='p-2 m-2 flex shadow-sm cursor-pointer'>
       <img
