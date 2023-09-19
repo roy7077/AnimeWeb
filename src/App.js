@@ -9,9 +9,15 @@ import './index.css'
 import { Outlet, RouterProvider, createBrowserRouter } from 'react-router-dom';
 import InfoCard from './components/InfoCard';
 import About from './components/About';
-
+import useOnline from './utils/useOnline';
+import Offline from './components/Offline';
 
 function App() {
+
+  const online=useOnline();
+  if(!online)
+  return <Offline/>
+
   return (
     <div className=''>
       <Provider store={store}>
