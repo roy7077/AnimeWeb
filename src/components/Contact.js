@@ -20,9 +20,6 @@ const Contact = () => {
     <div 
     className='relative py-28 bg-gray-900'
     >
-       {/* <label htmlFor="email">
-        Email Address
-      </label> */}
 
     <div className="relative z-10 max-w-screen-xl mx-auto text-gray-600 sm:px-4 md:px-8">
         <div className="max-w-lg space-y-3 px-4 sm:mx-auto sm:text-center sm:px-0">

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import PlanetCard, { FavRender } from './PlanetCard';
+import { Link } from 'react-router-dom';
 
 const FavCard = ({id}) => {
 
