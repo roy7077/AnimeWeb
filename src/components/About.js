@@ -1,7 +1,12 @@
 // src/About.js
 import React from 'react';
+import { useDispatch } from "react-redux";
+import { closeshow } from "../utils/Slice";
 
 const About = () => {
+  const dispatch=useDispatch();
+  dispatch(closeshow());
+  
   return (
     <div className="bg-gray-800 text-white min-h-screen">
       {/* Navigation Bar */}

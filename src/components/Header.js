@@ -1,15 +1,21 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { setname } from "../utils/Slice";
+import { closeshow, openshow, setname } from "../utils/Slice";
 import { Link } from "react-router-dom";
+import SearchSuggestion from "./SearchSuggestion";
 
 const Header = () => {
   const [searchText, setSearchText] = useState("dbz");
+  const [suggestionSearch,setSuggestionSearch]=useState("");
   const dispatch = useDispatch();
 
   return (
     <div className=" shadow-lg flex justify-between bg-gray-800 sticky top-0">
-      <div className="">
+      <div 
+      onClick={()=>{
+        dispatch(closeshow())
+      }}
+      className="">
         <Link to="/">
           <img
             alt="logo"
@@ -19,32 +25,59 @@ const Header = () => {
         </Link>
       </div>
       <div className="flex">
-        <input
-          className="p-2 m-2 rounded-lg"
-          type="text"
-          placeholder="Search"
-          onChange={(e) => {
-            setSearchText(e.target.value);
-          }}
-          onKeyDown={(e) => {
-            if (e.keyCode == 13) {
-              dispatch(setname(searchText));
-            }
-          }}
-        />
+        <div className="block relative">
+          <input
+            className="p-2 m-2 rounded-lg"
+            type="text"
+            placeholder="Search"
+            onChange={(e) => {
+              setSearchText(e.target.value);
+              setSuggestionSearch(e.target.value);
+            }}
+            onKeyDown={(e) => {
+              if (e.keyCode == 13) {
+                dispatch(setname(searchText));
+                dispatch(closeshow())
+              }
+            }}
+
+            onFocus={()=>{
+              dispatch(openshow());
+            }}
+
+            // onBlur={()=>{
+            //   dispatch(closeshow());
+            // }}
+
+          />
+          <div className="absolute z-10 mt-1 w-56 bg-white border border-gray-300 shadow-lg rounded-lg">
+            <SearchSuggestion  searchName={suggestionSearch}/>
+          </div>
+        </div>
+
         <img
+
           className="rounded shadow-lg h-12 w-12 cursor-pointer"
           alt="search logo"
           src="https://static.vecteezy.com/system/resources/previews/015/337/677/original/transparent-search-icon-free-png.png"
           onClick={() => {
             dispatch(setname(searchText));
+            dispatch(closeshow())
           }}
         />
       </div>
-      <div className="p-2 m-2">
+      <div 
+      onClick={()=>{
+        dispatch(closeshow())
+      }}
+      className="p-2 m-2">
         <ul className="flex text-white">
           <li>
-            <Link to="/" className="ml-5 hover:text-red-500 cursor-pointer">
+            <Link 
+            onClick={()=>{
+              dispatch(setname("nobita"))
+            }}
+            to="/" className="ml-5 hover:text-red-500 cursor-pointer">
               Home
             </Link>
           </li>

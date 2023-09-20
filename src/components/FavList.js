@@ -2,9 +2,13 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import FavCard from './FavCard';
 import { Link } from 'react-router-dom';
+import { useDispatch } from "react-redux";
+import { closeshow } from "../utils/Slice";
 
 const FavList = () => {
-
+  const dispatch=useDispatch();
+  dispatch(closeshow());
+  
   const data = useSelector((d)=>d.counter.items);
 
   if(data.length===0)

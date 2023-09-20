@@ -1,7 +1,12 @@
 import React from "react";
 import { useForm, ValidationError } from "@formspree/react";
+import { useDispatch } from "react-redux";
+import { closeshow } from "../utils/Slice";
 
 const Contact = () => {
+
+  const dispatch=useDispatch();
+  dispatch(closeshow());
   const [state, handleSubmit] = useForm("mleywobp");
   if (state.succeeded) {
     return (

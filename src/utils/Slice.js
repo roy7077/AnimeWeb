@@ -8,7 +8,8 @@ export const Slice = createSlice({
   name: 'counter',
   initialState:{
     items:[],
-    name:"",
+    name:"nobita",
+    searchshow:false,
   },
   reducers: {
     setname:(state,action)=>{
@@ -39,10 +40,16 @@ export const Slice = createSlice({
    clearitems:(state)=>{
        state.items=[];
    },
+   closeshow:(state)=>{
+    state.searchshow=false;
+   },
+   openshow:(state)=>{
+    state.searchshow=true;
+   }
   },
 })
 
 // Action creators are generated for each case reducer function
-export const { setname ,additems,clearitems,removeitems } = Slice.actions
+export const { setname ,additems,clearitems,removeitems,closeshow,openshow } = Slice.actions
 
 export default Slice.reducer

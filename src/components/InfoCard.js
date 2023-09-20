@@ -2,13 +2,14 @@ import React from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { useState,useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { additems } from '../utils/Slice';
+import { additems, closeshow } from '../utils/Slice';
 
 const InfoCard = () => {
     const {id} = useParams();
     const [anime, setAnime] = useState({})
      
     const dispatch=useDispatch();
+    dispatch(closeshow());
     //destructure anime
     const {
         title, synopsis, 
@@ -29,6 +30,7 @@ const InfoCard = () => {
     useEffect(() => {
         getAnime(id)
     }, [])
+
 
     return (
         <div className='flex p-5 m-5'>
