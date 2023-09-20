@@ -33,10 +33,10 @@ const InfoCard = () => {
 
 
     return (
-        <div className='flex p-5 m-5'>
-            <div className='p-2 m-2 w-1/2 '>
+        <div className='sm:flex block sm:p-5 sm:m-5 w-full p-1 m-2'>
+            <div className='sm:p-2 sm:m-2 sm:w-1/2 w-full p-2 m-2 '>
                 <img 
-                className='rounded-lg shadow-xl'
+                className='rounded-lg shadow-xl '
                 src={images?.webp?.large_image_url} />
                 <ul className='m-2 pd-2'>
                     <li>{title}</li>
@@ -46,9 +46,9 @@ const InfoCard = () => {
                     
                 </ul>
             </div>
-            <div className='w-1/2 p-5 m-10'>
+            <div className='sm:w-1/2 sm:p-5 sm:m-10 w-full p-5  m-5 border-t-black border mr-5'>
                 <h1>{synopsis} </h1>
-                <div className='m-2 p-2 shadow-lg flex text-center justify-center items-center'>
+                <div className='m-2 p-2 shadow-lg sm:flex block text-center justify-center items-center'>
                     <h1 className='block font-bold' >Trailer</h1>
                     <div className='m-2 p-2 shadow-lg flex'>
                     <img 

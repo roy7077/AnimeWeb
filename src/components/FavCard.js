@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import PlanetCard, { FavRender } from './PlanetCard';
 import { Link } from 'react-router-dom';
+import FavCardShow from './FavCardShow';
 
 const FavCard = ({id}) => {
 
@@ -19,7 +20,7 @@ const FavCard = ({id}) => {
   
   return (
     <div className=''>
-      <FavRender info={data}/>
+      <FavCardShow info={data}/>
     </div>
   )
 }

@@ -19,7 +19,7 @@ const FavList = () => {
         {
             data &&
             data.map((Data)=>(
-                <Link to={"/searched/"+Data} key={Data} ><FavCard id={Data}/></Link>
+                <FavCard id={Data} key={data}/>
             ))
         }
     </div>

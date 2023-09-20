@@ -10,7 +10,7 @@ const Header = () => {
   const dispatch = useDispatch();
 
   return (
-    <div className=" shadow-lg flex justify-between bg-gray-800 sticky top-0">
+    <div className="sm:flex shadow-lg block justify-between bg-gray-800 sticky top-0">
       <div 
       onClick={()=>{
         dispatch(closeshow())
@@ -19,12 +19,14 @@ const Header = () => {
         <Link to="/">
           <img
             alt="logo"
-            className="rounded shadow-lg h-12 w-12 ml-5"
+            className="rounded shadow-lg h-12 w-12 ml-5  invisible sm:visible "
             src="https://i.pinimg.com/736x/85/53/9b/85539b9ed619c9423eec9476d970b93c.jpg"
           />
         </Link>
       </div>
-      <div className="flex">
+
+
+      <div className="flex ml-10 sm:m-0 ">
         <div className="block relative">
           <input
             className="p-2 m-2 rounded-lg"
@@ -66,6 +68,7 @@ const Header = () => {
           }}
         />
       </div>
+      
       <div 
       onClick={()=>{
         dispatch(closeshow())
